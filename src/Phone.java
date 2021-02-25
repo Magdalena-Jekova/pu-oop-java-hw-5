@@ -181,9 +181,11 @@ public class Phone extends JFrame implements MouseListener {
         if(this.burnedPixelsCounter > 2048){
             this.setPhoneCondition("not working");
             this.nonWorkingPhonesCollection.add(this);
+            Modal.show(this, "Внимание!", "Телефонът е дефектен! Има повече от 50% изгорели пиксели!");
         }else{
             this.setPhoneCondition("good");
             this.workingPhonesCollection.add(this);
+            Modal.show(this, "Внимание!", "Телефонът е в добро състояние!");
         }
         System.out.println(this.getSerialNumber() + " -> " + this.getPhoneCondition());
         dispose();
